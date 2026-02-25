@@ -1,0 +1,3 @@
+Why did we need docker ?
+Containers are light weight than entire VMs and can be managed easily 
+It has a host image and other system dependencies and libraries are taken from host Operating System . Containers are light and easy to maintain .
