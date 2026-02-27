@@ -1,0 +1,34 @@
+Today we have learnt more info on Docker . I came to know Veeramalla is just skimmig and not going in depth so i switched to nana .
+
+So we have images in docker which are actually lightwight dependecies only which are required to build the application rest are taken from the host's OS.
+
+Containers can be said as Running Env of the image. Light Vms with no full OS only a base image .
+
+
+
+Ctrl + C kills 
+
+Commands learnt for docker todays:
+
+docker  pull image // Pulls image from docker 
+docker run image   // Runs image in container
+
+docker ps // Gives list of all running docker containers along with their IDs
+docker ps -a   // Lsit all docker containers running or stopped 
+docker start id 
+docker stop id
+
+docker run -d image // Runs container as a background job
+
+.
+We can see more than one image with different versions running on same conatiner ports , it is possible but we need to map them to different porst on our Host i.e. our laptop . TO do thi we must sprecify as run .
+
+docker run -p6000:6379 image/here redis 
+             Host  image
+
+It will map the port 6000 of our host to the port of the image . 
+
+docker run -d -p6001:6379 redis:4.0
+Here the port is changed beacuse 6000 is already in use .
+
+
