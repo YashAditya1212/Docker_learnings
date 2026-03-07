@@ -1,0 +1,42 @@
+docker run -d \
+-p 27017:27017 \
+--name name
+-e ME_CONFIG_MONGODB_ADMINUSERNAME= "" \
+-e ME_CONFIG_MONGODB_ADMINPASSWORD ="" \
+-e ME_CONFIG_MONGODB_SERVER="mongodb" \
+-e ME_CONFIG_MONGODB_PORT=27017
+
+--net created_common_network 
+
+mongo-express
+
+
+THIS IN DOCKER_COMPOSE :
+
+version:'3'
+services:
+  mongodb:
+    image:mongo
+
+    ports"
+      - 27017:27017
+    environment"
+      MONGO_INIT_ROOT_USERNAME=""
+      MONGO_INIIT_ROOT_PASSWORD =""
+  mongo-express:
+    image:mongo-express
+
+    ports:
+      - 27017:27017
+
+
+
+
+Docker compose is used to easily create and run containers than using commands
+
+docker-compose -f mongo.yaml up -d
+docker-compose -f mongo.yaml down
+
+
+Take care of indentation. 
+Docker-compose takes care of creating common network for mongo and mongo-express.
